@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		885CFD122C21793200377EEE /* Reminders_Clone_LBTAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD112C21793200377EEE /* Reminders_Clone_LBTAApp.swift */; };
-		885CFD142C21793200377EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD132C21793200377EEE /* ContentView.swift */; };
 		885CFD162C21793300377EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885CFD152C21793300377EEE /* Assets.xcassets */; };
 		885CFD192C21793300377EEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885CFD182C21793300377EEE /* Preview Assets.xcassets */; };
+		885CFD212C2179C500377EEE /* MyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD202C2179C500377EEE /* MyListsView.swift */; };
+		885CFD232C217B4300377EEE /* AddMyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD222C217B4300377EEE /* AddMyListView.swift */; };
+		885CFD262C217C5300377EEE /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD252C217C5200377EEE /* ColorPickerView.swift */; };
+		885CFD292C2185F300377EEE /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD282C2185F300377EEE /* MyListModel.swift */; };
+		885CFD2B2C2186A700377EEE /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD2A2C2186A700377EEE /* PreviewContainer.swift */; };
+		885CFD2E2C218B2300377EEE /* Ext+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD2D2C218B2300377EEE /* Ext+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		885CFD0E2C21793200377EEE /* Reminders_Clone_LBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders_Clone_LBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885CFD112C21793200377EEE /* Reminders_Clone_LBTAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders_Clone_LBTAApp.swift; sourceTree = "<group>"; };
-		885CFD132C21793200377EEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		885CFD152C21793300377EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		885CFD182C21793300377EEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		885CFD202C2179C500377EEE /* MyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsView.swift; sourceTree = "<group>"; };
+		885CFD222C217B4300377EEE /* AddMyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyListView.swift; sourceTree = "<group>"; };
+		885CFD252C217C5200377EEE /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		885CFD282C2185F300377EEE /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
+		885CFD2A2C2186A700377EEE /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		885CFD2D2C218B2300377EEE /* Ext+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				885CFD112C21793200377EEE /* Reminders_Clone_LBTAApp.swift */,
-				885CFD132C21793200377EEE /* ContentView.swift */,
+				885CFD2C2C218B0F00377EEE /* Extensionts */,
+				885CFD272C2185E200377EEE /* Models */,
+				885CFD242C217C1C00377EEE /* SubViews */,
+				885CFD1F2C2179AC00377EEE /* Views */,
 				885CFD152C21793300377EEE /* Assets.xcassets */,
 				885CFD172C21793300377EEE /* Preview Content */,
 			);
@@ -63,8 +76,42 @@
 			isa = PBXGroup;
 			children = (
 				885CFD182C21793300377EEE /* Preview Assets.xcassets */,
+				885CFD2A2C2186A700377EEE /* PreviewContainer.swift */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		885CFD1F2C2179AC00377EEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				885CFD202C2179C500377EEE /* MyListsView.swift */,
+				885CFD222C217B4300377EEE /* AddMyListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		885CFD242C217C1C00377EEE /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				885CFD252C217C5200377EEE /* ColorPickerView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		885CFD272C2185E200377EEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				885CFD282C2185F300377EEE /* MyListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		885CFD2C2C218B0F00377EEE /* Extensionts */ = {
+			isa = PBXGroup;
+			children = (
+				885CFD2D2C218B2300377EEE /* Ext+Color.swift */,
+			);
+			path = Extensionts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885CFD142C21793200377EEE /* ContentView.swift in Sources */,
+				885CFD2B2C2186A700377EEE /* PreviewContainer.swift in Sources */,
+				885CFD262C217C5300377EEE /* ColorPickerView.swift in Sources */,
+				885CFD292C2185F300377EEE /* MyListModel.swift in Sources */,
+				885CFD2E2C218B2300377EEE /* Ext+Color.swift in Sources */,
 				885CFD122C21793200377EEE /* Reminders_Clone_LBTAApp.swift in Sources */,
+				885CFD232C217B4300377EEE /* AddMyListView.swift in Sources */,
+				885CFD212C2179C500377EEE /* MyListsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

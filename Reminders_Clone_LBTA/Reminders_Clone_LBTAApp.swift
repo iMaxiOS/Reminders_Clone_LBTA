@@ -11,7 +11,10 @@ import SwiftUI
 struct Reminders_Clone_LBTAApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MyListsView()
+            }
+            .modelContainer(for: MyListModel.self)
         }
     }
 }
