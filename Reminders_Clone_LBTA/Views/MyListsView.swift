@@ -15,34 +15,37 @@ struct MyListsView: View {
     @Query private var myLists: [MyListModel]
     
     var body: some View {
-        List {
-            Text("My Lists")
-                .font(.largeTitle.bold())
-            
-            ForEach(myLists) { list in
-                HStack {
-                    Image(systemName: "line.3.horizontal.circle.fill")
-                        .font(.system(size: 32).bold())
-                        .foregroundStyle(Color(hex: list.colorCode))
-                    Text(list.name)
+        NavigationStack {
+            List {
+                ForEach(myLists) { list in
+                    NavigationLink {
+                        MyListDetailView(myList: list)
+                    } label: {
+                        HStack {
+                            Image(systemName: "line.3.horizontal.circle.fill")
+                                .font(.system(size: 32).bold())
+                                .foregroundStyle(Color(hex: list.colorCode))
+                            Text(list.name)
+                        }
+                    }
                 }
+                
+                Button {
+                    isPresented = true
+                } label: {
+                    Text("Add List")
+                        .foregroundStyle(.accent)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+                .listRowSeparator(.hidden)
             }
-            
-            Button {
-                isPresented = true
-            } label: {
-                Text("Add List")
-                    .foregroundStyle(.blue)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .sheet(isPresented: $isPresented, content: {
-            NavigationStack {
+            .bold()
+            .listStyle(.plain)
+            .navigationTitle("My Lists")
+            .sheet(isPresented: $isPresented, content: {
                 AddMyListView()
-            }
-        })
+            })
+        }
     }
 }
 

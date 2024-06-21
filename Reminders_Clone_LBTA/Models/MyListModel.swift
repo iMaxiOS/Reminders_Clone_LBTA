@@ -13,6 +13,9 @@ class MyListModel {
     var name: String
     var colorCode: String
     
+    @Relationship(deleteRule: .cascade)
+    var reminders: [ReminderModel] = []
+    
     init(name: String, colorCode: String) {
         self.name = name
         self.colorCode = colorCode

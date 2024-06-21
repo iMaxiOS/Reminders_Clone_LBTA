@@ -19,32 +19,36 @@ struct AddMyListView: View {
     @Namespace var animation
     
     var body: some View {
-        VStack {
-            Image(systemName: "line.3.horizontal.circle.fill")
-                .font(.system(size: 80))
-                .foregroundStyle(color)
-            
-            TextField("List name", text: $listName)
-                .textFieldStyle(.roundedBorder)
-                .padding([.leading, .trailing], 44)
-            
-            ColorPickerView(selectedColor: $color)
-                .matchedGeometryEffect(id: "ANIMATION", in: animation)
-        }
-        .navigationTitle("New List")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button("Clone") {
-                    dismiss()
-                }
+        NavigationStack {
+            VStack {
+                Image(systemName: "line.3.horizontal.circle.fill")
+                    .font(.system(size: 80))
+                    .foregroundStyle(color)
+                
+                TextField("List name", text: $listName)
+                    .textFieldStyle(.roundedBorder)
+                    .padding([.leading, .trailing], 44)
+                
+                ColorPickerView(selectedColor: $color)
+                    .matchedGeometryEffect(id: "ANIMATION", in: animation)
             }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Done") {
-                    guard let hex = color.toHex() else { return }
-                    let myList = MyListModel(name: listName, colorCode: hex)
-                    context.insert(myList)
-                    dismiss()
+            .navigationTitle("New List")
+             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Clone") {
+                        dismiss()
+                    }
+                    .bold()
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        guard let hex = color.toHex() else { return }
+                        let myList = MyListModel(name: listName, colorCode: hex)
+                        context.insert(myList)
+                        dismiss()
+                    }
+                    .bold()
                 }
             }
         }
