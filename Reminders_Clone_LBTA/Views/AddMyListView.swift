@@ -36,7 +36,7 @@ struct AddMyListView: View {
              .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("Clone") {
+                    Button("Close") {
                         dismiss()
                     }
                     .bold()

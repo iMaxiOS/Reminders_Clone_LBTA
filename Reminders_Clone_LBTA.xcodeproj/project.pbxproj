@@ -20,6 +20,7 @@
 		885CFD322C21AA0400377EEE /* MyListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD312C21AA0400377EEE /* MyListDetailView.swift */; };
 		885CFD342C22C78D00377EEE /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885CFD332C22C78D00377EEE /* Ext+String.swift */; };
 		8872DF0A2C2406FF00EF8760 /* ReminderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8872DF092C2406FF00EF8760 /* ReminderCellView.swift */; };
+		887868E92C2559740043E390 /* ReminderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887868E82C2559740043E390 /* ReminderEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		885CFD312C21AA0400377EEE /* MyListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailView.swift; sourceTree = "<group>"; };
 		885CFD332C22C78D00377EEE /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
 		8872DF092C2406FF00EF8760 /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
+		887868E82C2559740043E390 /* ReminderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				885CFD202C2179C500377EEE /* MyListsView.swift */,
 				885CFD222C217B4300377EEE /* AddMyListView.swift */,
 				885CFD312C21AA0400377EEE /* MyListDetailView.swift */,
+				887868E82C2559740043E390 /* ReminderEditView.swift */,
 				8872DF092C2406FF00EF8760 /* ReminderCellView.swift */,
 			);
 			path = Views;
@@ -204,6 +207,7 @@
 				8872DF0A2C2406FF00EF8760 /* ReminderCellView.swift in Sources */,
 				885CFD122C21793200377EEE /* Reminders_Clone_LBTAApp.swift in Sources */,
 				885CFD302C21A87B00377EEE /* ReminderModel.swift in Sources */,
+				887868E92C2559740043E390 /* ReminderEditView.swift in Sources */,
 				885CFD232C217B4300377EEE /* AddMyListView.swift in Sources */,
 				885CFD342C22C78D00377EEE /* Ext+String.swift in Sources */,
 				885CFD212C2179C500377EEE /* MyListsView.swift in Sources */,

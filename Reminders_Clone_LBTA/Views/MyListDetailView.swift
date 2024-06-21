@@ -12,6 +12,9 @@ struct MyListDetailView: View {
     
     @State private var title: String = ""
     @State private var isNewReminderPresented: Bool = false
+    @State private var showReminderEditView: Bool = false
+    
+    @State private var selectedReminder: ReminderModel?
     
     let myList: MyListModel
     
@@ -21,16 +24,17 @@ struct MyListDetailView: View {
                 ForEach(myList.reminders) { reminder in
                     ReminderCellView(onEvent: { event in
                         switch event {
-                        case .onChecked(let reminderModel, let bool):
-                            print("onChecked")
-                        case .onSelec(let reminderModel):
-                            print("selec")
-                        case .onInfoSelected(let reminderModel):
-                            print("Info")
+                        case .onChecked(let reminder, let checked):
+                            reminder.isCompleted = checked
+                        case .onSelect(let reminder):
+                            selectedReminder = reminder
+                        case .onInfoSelected(let reminder):
+                            showReminderEditView = true
+                            selectedReminder = reminder
                         }
                     },
                     reminder: reminder,
-                    isSelected: false)
+                    isSelected: isReminderSelected(reminder))
                 }
             }
             
@@ -58,15 +62,27 @@ struct MyListDetailView: View {
                 }
             }
         }
+        .sheet(isPresented: $showReminderEditView, content: {
+            if let selectedReminder  {
+                NavigationStack {
+                    ReminderEditView(reminder: selectedReminder)
+                }
+            }
+        })
     }
 }
 
 private extension MyListDetailView {
-    private var isFormValid: Bool {
+    
+    func isReminderSelected(_ reminder: ReminderModel) -> Bool {
+        reminder.persistentModelID == selectedReminder?.persistentModelID
+    }
+    
+    var isFormValid: Bool {
         !title.isEmptyOrWhitespace
     }
     
-    private func saveReminder() {
+    func saveReminder() {
         let reminder = ReminderModel(title: title)
         myList.reminders.append(reminder)
         title = ""

@@ -11,7 +11,7 @@ import SwiftData
 
 enum ReminderCellEvents {
     case onChecked(ReminderModel, Bool)
-    case onSelec(ReminderModel)
+    case onSelect(ReminderModel)
     case onInfoSelected(ReminderModel)
 }
 
@@ -65,7 +65,7 @@ struct ReminderCellView: View {
         }
         .contentShape(Rectangle())
         .onTapGesture {
-            onEvent(.onSelec(reminder))
+            onEvent(.onSelect(reminder))
         }
     }
 }
